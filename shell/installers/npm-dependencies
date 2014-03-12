@@ -1,0 +1,27 @@
+#!/bin/bash
+
+# shell/installs/npm-dependencies
+# installs the dependent npm packages
+# must have npm installed in /opt/node/bin/npm
+
+echo "-----Installing npm packages-----"
+
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+
+cd ../..
+
+NPM="/opt/node/bin/npm"
+
+$NPM install serialport
+
+$NPM install redis
+
+$NPM install forever
+
+$NPM install speaker
+
+#edit forever's location for node.
+$DIR/change
+
+
+

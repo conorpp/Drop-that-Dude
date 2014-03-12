@@ -1,0 +1,66 @@
+extend layout
+block title
+    p.fleft
+        | drop that dude
+block header
+  |<link href='http://api.tiles.mapbox.com/mapbox.js/v1.3.1/mapbox.css' rel='stylesheet' />
+  |<!--[if lte IE 8]>
+  |<link href='http://api.tiles.mapbox.com/mapbox.js/v1.3.1/mapbox.ie.css' rel='stylesheet' >
+  |<![endif]-->
+  |<script src='http://api.tiles.mapbox.com/mapbox.js/v1.3.1/mapbox.js'></script>
+  script(src="http://cdn.binaryjs.com/0/binary.js")
+  script(src='/js/record.js')
+block content        
+        
+    #streamWrap.center.inline
+        
+        table
+            tr
+                td
+                    table.wide
+                        tr
+                            td.fs8
+                                | score: 
+                                span#score  0
+                            td
+                                | shots: 
+                                #shots 14
+                            td.fs8
+                                | latency: 
+                                span#latency 0 ms
+                            td.fs8
+                                button(id='refresh', class='btn btn-primary', title='reload the video stream and maybe it\'ll be quicker') refresh
+            tr
+                td
+
+                    iframe(src='/video', id='stream')
+                    #controlBar
+                        //button(id='join', class='btn btn-success right15') Join
+                        div.btn-group.fleft
+                            | 
+                            button(id='left', class='btn btn-default command', title="go left")
+                                |<span class="glyphicon glyphicon-chevron-left"></span>
+                            button(id='reverse' ,class='btn btn-default command', title="go backward")
+                                |<span class="glyphicon glyphicon-arrow-down"></span>
+                            button(id='forward' ,class='btn btn-default command', title="go forward")
+                                |<span class="glyphicon glyphicon-arrow-up"></span>
+                            button(id='right', class='btn btn-default command', title="go right")
+                                |<span class="glyphicon glyphicon-chevron-right"></span>
+
+                        
+                        button(id='record' class='btn btn-default left5 fleft', title='Broadcast your voice to the rover\'s speakers')
+                            |<span class="glyphicon glyphicon-volume-up not-recording"></span>
+                        
+                    p.info
+                        | <br>you can use arrow keys too
+            tr
+                td(id='queue', title='join the queue to control the rover by pressing a button')
+                    .fs20.textLeft queue
+                    table.table.table-striped.color1.bg0.fleft
+                        tr
+                            th position
+                            th user
+                            th seconds left
+
+ 
+                

@@ -1,0 +1,212 @@
+
+/*
+Main css file.  Note that twitter bootstrap css library is used mostly
+
+Order of this file
+1. attributes that apply to everything
+2. classes that are reused for building UI
+3. attributes for specific elements
+
+*/
+
+iframe{
+    width:500px;
+    height:320px;
+    border:none;
+    overflow-y: hidden;
+}
+body {
+    background: #3b5999;
+    margin-top: 15px;
+    color:white;
+    text-align: center;
+}
+button{
+    padding:25px;
+}
+footer{
+    color:white;
+}
+.hide{display:none;}
+
+.fixed{position: fixed;}
+.abs{position: absolute;}
+.rel{position: relative;}
+
+.inline{display: inline-block;}
+.block{display: inline;}
+
+.center{text-align: center;}
+
+.color0{color:white;}
+.bg1{background:#a5a5a5;}
+
+.fs4{font-size: 0.4em;}
+.fs6{font-size: 0.6em;}
+.fs8{font-size: 0.8em;}
+.fs12{font-size: 1.2em;}
+.fs14{font-size: 1.4em;}
+.fs16{font-size: 1.6em;}
+.fs18{font-size: 1.8em;}
+.fs20{font-size: 2em;}
+
+.mar5{margin: 5px;}
+.mar10{margin: 10px;}
+.mar15{margin: 15px;}
+.mar25{margin: 25px;}
+.mar30{margin: 30px;}
+
+.pad5{padding: 5px;}
+.pad10{padding: 10px;}
+.pad15{padding: 15px;}
+.pad15{padding: 15px;}
+.pad20{padding: 20px;}
+.pad40{padding: 40px;}
+
+.level1{z-index: 1;}
+.level2{z-index: 2;}
+.level3{z-index: 3;}
+.level4{z-index: 4;}
+.level5{z-index: 5;}
+
+.textLeft{text-align: left;}
+.textRight{text-align: right;}
+.textCenter{text-align: center;}
+
+.clicker{cursor: pointer;}
+
+.color0{color:white}                        /* WHITE */
+.bg0{background:white}              
+.color1{color:black;}                     /* blakc */
+.bg1{background:black;}
+.color2{color:#2b2b2b;}                     /* DARK GREY */
+.bg2{background:#2b2b2b;}
+.color3{color:#3A3A3A;}                     /* MEDIUM GREY */
+.bg3{background: #3A3A3A;}
+.color4{color:#5F5F5F;}                     /* LIGHT GREY */
+.bg4{background: #5F5F5F;}
+.color5, .not-recording{color:#E27171;}                     /* RED */
+.bg5{background: #E27171;}
+
+.recording{color:#d60000;}
+    
+.right5{right:5px; margin-right: 5px;}
+.right10{right:10px; margin-right: 10px;}
+.right15{right:15px; margin-right: 15px;}
+
+.left5{left:5px; margin-left: 5px;}
+.left10{left:10px; margin-left: 10px;}
+.left15{left:15px; margin-left: 15px;}
+
+.fleft{float:left; left:0px;}
+.fright{float:right; right:0px;}
+
+.width1{max-width: 300px;}
+.width2{max-width: 400px;}
+.width3{max-width: 500px;}
+
+.wide{width: 100%;}
+.high{height: 100%;}
+
+.topleft{top:0px; left: 0px;}
+
+.shadow{box-shadow: -2px 2px 20px 1px #000;}
+
+.head{
+    text-decoration: underline;
+}
+
+.popupSpace{
+    top:0px;
+    max-width: 28em;
+}
+.popup{
+    border-radius: 4px;
+    padding-right: 40px;
+    max-width: 380px;
+}
+
+.adminPopup {
+    max-width: 300px;
+    
+}
+
+.user{
+    background: white;
+    width:100%;
+    height: 100%;
+    color:black;
+}
+
+
+#logo{top:0px;}
+#title{margin-left: 30px; top:0px; font-size: 2.5em;}
+#siteWrap{/*top:0px; *//*margin-left: 20%;*/}
+#wrap{
+    /*padding-bottom: 100px;
+    min-height: 450px;
+    margin-top: 40px;
+    text-align: left; */
+    /*padding:30px;*/
+    /*margin-left: -25px;*/
+}
+
+.textWrap{
+    max-width: 550px;
+    text-align: left;
+}
+#streamWrap{
+   /* left:20%; */
+    top:0px;
+}
+#audio{
+    margin-top: -10000px;
+}
+#stop{
+    margin-left:15px;
+}
+#stream{
+    top:0;
+  /*  left:25%; */
+}
+#controlBar{
+    width:100%;
+    bottom:0%;
+}
+#navBar{
+    right:8%;
+    top:10px;
+    padding:5px;
+    z-index: 1;
+}
+#controlBar button{
+    font-size: 2.6em;
+    margin-bottom:  10px;
+}
+#videoCanvas{
+    width:420px;
+}
+#queue table{
+    max-width: 420px;
+}
+
+#forward{
+}
+#stdout{
+    color:rgb(124, 124, 255);
+    background: rgb(36, 36, 36);
+    height: 300px; max-width: 615px;
+    overflow-y: scroll;
+}
+#map{width:100%; height:350px;}
+
+/* MOBILE devices < 480px wide */
+@media all and (max-width: 480px) {
+    #controlBar .btn-group button, #controlBar #record{font-size: 4em}
+    .info{display: none;}
+    /*#controlBar button#join{font-size: 1.5em}*/
+}
+@media all and (min-width: 480px) {
+    body .textWrap{margin-left: 22%;}
+    #controlBar .btn-group{margin-left: 10%;}
+}
