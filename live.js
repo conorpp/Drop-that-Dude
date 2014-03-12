@@ -31,6 +31,7 @@ var live = {
     
     /* for attempting to reload queue in quick server restarts. */
     initQueue: function(){
+	if (true) return;
         var secs = 30*1000;
         db.store.get('queue', function(err, data){
             data = data ? JSON.parse(data) : data;

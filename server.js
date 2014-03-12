@@ -9,7 +9,7 @@ express = require('express'),
 views = require('./views'),
 db = require('./database'),
 live = require('./live'),
-AudioServer = require('./audioServer'),
+//AudioServer = require('./audioServer'),
 crypto = require('crypto'),
 app = express();
 SECRET = 'wow such secret.';
@@ -29,13 +29,20 @@ else
 
 C.log('Listening for http requests on ', S.http_port, {logLevel:1, color:'green', font:'bold'});
 C.log('Listening for commands on ', S.command_port, {logLevel:1, color:'green', font:'bold'});
-C.log('Redis connected to '+S.host+':'+S.redis_port, {logLevel:1, color:'green', font:'bold'});
+C.log('Redis connected to '+S.redis_port, {logLevel:1, color:'green', font:'bold'});
 app.listen(S.http_port);
-db.listen(S.redis_port, S.host);
 views.listen(app);
-live.socket.listen(S.command_port);
-live.redis.listen(S.redis_port, S.host);
 
+var fs = require('fs');
+
+var settings = JSON.parse(fs.readFileSync('/home/ubuntu/web_apps/CORE/apps.json'));
+var dsettings = settings['dropthatdude.com'];
+console.log(settings, dsettings.command_port);
+live.socket.listen(dsettings.command_port);
+// console.log('redis is  ', settings.services);
+live.redis.listen(settings.services.redis,'127.0.0.1');
+
+db.listen(settings.services.redis, '127.0.0.1');
 //Exit gracefully
 var Terminal = require('child_process');
 process.on('SIGINT', function() {
